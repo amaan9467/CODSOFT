@@ -1,0 +1,39 @@
+import re
+
+def chatbot():
+    print("Chatbot: Hello! I'm your AI assistant. Type 'exit' to end the conversation.")
+
+    while True:
+        user_input = input("You: ").lower()
+
+        # Greetings
+        if re.search(r"\b(hi|hello|hey|hola)\b", user_input):
+            print("Chatbot: Hello! How can I assist you today?")
+
+        # Asking chatbot's name
+        elif re.search(r"\b(your name|who are you)\b", user_input):
+            print("Chatbot: I am a simple chatbot designed to assist you.")
+
+        # Asking about chatbot's condition
+        elif re.search(r"\b(how are you|how's it going)\b", user_input):
+            print("Chatbot: I'm just a bot, but I'm doing great! How about you?")
+
+        # Python-related questions
+        elif re.search(r"\b(python|learn python|python programming)\b", user_input):
+            print("Chatbot: Python is a versatile programming language used for AI, web development, and more.")
+
+        # Asking about chatbot capabilities
+        elif re.search(r"\b(what can you do|your abilities|your features)\b", user_input):
+            print("Chatbot: I can answer simple questions, chat with you, and provide basic programming information.")
+
+        # Farewell messages
+        elif re.search(r"\b(bye|exit|goodbye|see you)\b", user_input):
+            print("Chatbot: Goodbye! Have a great day!")
+            break
+
+        # Default response
+        else:
+            print("Chatbot: I'm sorry, I didn't understand that. Can you rephrase?")
+
+# Run the chatbot
+chatbot()
